@@ -8,16 +8,19 @@
 </head>
 <body>
     <div id="main-container">
-    <h1 id="title">My Book Finder</h1>
-    <div id="search-container">
-        <input type="text" id="search-input" placeholder="Search for books...">
-        <button id="search-button">Search</button>
-    </div>
+        <h1 id="title">My Book Finder</h1>
+        <form id="search-form" autocomplete="off">
+            <input type="text" id="search-input" placeholder="Search for books..." required>
+            <button id="search-button" type="submit">Search</button>
+        </form>
 
-    <div id="results-container">
-        <h2>Search Results</h2>
-        <ul id="results-list"></ul>
+        <div id="results-container">
+            <div id="results-list">
+                <!-- Search results will be displayed here -->
+            </div>
+        </div>
     </div>
-    </div>
+    <script type="module" src="./src/main.js"></script>
+
 </body>
 </html>

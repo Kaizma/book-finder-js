@@ -1,5 +1,5 @@
-export function getAllBooks(){
-    return fetch('https://www.googleapis.com/books/v1/volumes?q=javascript')
+export function searchBooks(query){
+    return fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -12,5 +12,3 @@ export function getAllBooks(){
             console.error('There has been a problem with your fetch operation:', error);
         });
 }
-
-getAllBooks()
