@@ -1,8 +1,107 @@
-#main-container{
-    width: 100%;
-    height: 100%;
+/* styles.css */
+
+/* ---- Global resets & base ---- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                 Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+    background: #f5f5f5;
+    color: #333;
+    padding: 2rem;
+  }
+  
+  /* ---- Search form ---- */
+  #search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  #search-input {
+    flex: 1;
+    max-width: 400px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  #search-input:focus {
+    border-color: #0077cc;
+  }
+  
+  #search-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid #0077cc;
+    background: #0077cc;
+    color: #fff;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  #search-button:hover {
+    background: #005fa3;
+  }
+  
+  /* ---- Results grid ---- */
+  #results-list {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  
+  /* ---- Card styles ---- */
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+    height: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #0077cc;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    color: #555;
+    flex-grow: 1; /* push description/button apart if you add a button later */
+  }
+  
+  /* ---- No-results / error / loading ---- */
+  #results-list p {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+  }
+  
+  #title{
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #0077cc;
+  }
