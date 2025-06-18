@@ -105,3 +105,23 @@
     margin-bottom: 1rem;
     color: #0077cc;
   }
+
+
+  /* Add to your CSS file */
+.spinner {
+  display: none;
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 0.25rem solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}

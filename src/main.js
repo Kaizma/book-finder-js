@@ -1,5 +1,5 @@
 import { searchBooks } from "./api.js";
-
+import { toggleSpinner } from "./spinner.js";
 const input = document.querySelector("#search-input");
 const searchButton = document.querySelector("#search-button");
 const resultsList = document.querySelector("#results-list");
@@ -41,8 +41,9 @@ form.addEventListener("submit", async (event) => {
     }
 
     try {
+        toggleSpinner(true);
         const result = await searchBooks(query);
-
+        toggleSpinner(false);
         const items = Array.isArray(result) ? result : result.items ?? [];
         clearResults();
         if (items.length) {
